@@ -1,4 +1,5 @@
 ﻿using CoffeeShop.GraphQL.CodeFirstDB;
+using CoffeeShop.GraphQL.Mutation;
 using CoffeeShop.GraphQL.Query;
 using Microsoft.EntityFrameworkCore;
 
@@ -11,7 +12,8 @@ namespace CoffeeShop.GraphQL
             services.AddDbContext<CoffeeShopApplicationDbContext>(options => options.UseSqlite("Data Source=CoffeeShop.db"));
 
             services.AddGraphQLServer()
-                    .AddQueryType<BeverageQuery>();
+                    .AddQueryType<BeverageQuery>()
+                    .AddMutationType<BeverageMutation>();
         }
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
@@ -19,7 +21,6 @@ namespace CoffeeShop.GraphQL
             {
                 app.UseDeveloperExceptionPage();
             }
-
             app.UseRouting();
             app.UseEndpoints(endpoints =>
             {

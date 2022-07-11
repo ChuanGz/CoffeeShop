@@ -5,7 +5,7 @@ namespace CoffeeShop.GraphQL.Mutation
 {
     public class BeverageMutation
     {
-        public async Task<AddBeveragePayload> AddSpeakerAsync(
+        public async Task<AddBeveragePayload> AddBeverageAsync(
             AddBeverageInput input,
             [Service] CoffeeShopApplicationDbContext context)
         {
