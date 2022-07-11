@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CoffeeShop.GraphQL.Migrations
 {
     [DbContext(typeof(CoffeeShopApplicationDbContext))]
-    [Migration("20220711024528_Initial")]
+    [Migration("20220711030557_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -26,7 +26,7 @@ namespace CoffeeShop.GraphQL.Migrations
                     b.Property<double>("BasePrice")
                         .HasColumnType("REAL");
 
-                    b.Property<string>("Name")
+                    b.Property<string>("BeverageName")
                         .IsRequired()
                         .HasMaxLength(200)
                         .HasColumnType("TEXT");

@@ -24,7 +24,7 @@ namespace CoffeeShop.GraphQL.Migrations
                     b.Property<double>("BasePrice")
                         .HasColumnType("REAL");
 
-                    b.Property<string>("Name")
+                    b.Property<string>("BeverageName")
                         .IsRequired()
                         .HasMaxLength(200)
                         .HasColumnType("TEXT");

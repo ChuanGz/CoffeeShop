@@ -12,7 +12,7 @@ namespace CoffeeShop.GraphQL.Migrations
                 {
                     BeverageId = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    Name = table.Column<string>(type: "TEXT", maxLength: 200, nullable: false),
+                    BeverageName = table.Column<string>(type: "TEXT", maxLength: 200, nullable: false),
                     BasePrice = table.Column<double>(type: "REAL", nullable: false),
                     SalesPrice = table.Column<double>(type: "REAL", nullable: false)
                 },
