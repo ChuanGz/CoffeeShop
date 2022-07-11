@@ -5,7 +5,6 @@ namespace CoffeeShop.GraphQL.Query
 {
     public class BeverageQuery
     {
-        public IQueryable<Beverage> GetSpeakers([Service] CoffeeShopApplicationDbContext context) =>
-            context.Beverages;
+        public IQueryable<Beverage> GetBeverages([Service] CoffeeShopApplicationDbContext context) => context.Beverages;
     }
 }

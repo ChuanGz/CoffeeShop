@@ -1,4 +1,5 @@
 ﻿using CoffeeShop.GraphQL.CodeFirstDB;
+using CoffeeShop.GraphQL.Query;
 using Microsoft.EntityFrameworkCore;
 
 namespace CoffeeShop.GraphQL
@@ -8,6 +9,9 @@ namespace CoffeeShop.GraphQL
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<CoffeeShopApplicationDbContext>(options => options.UseSqlite("Data Source=CoffeeShop.db"));
+
+            services.AddGraphQLServer()
+                    .AddQueryType<BeverageQuery>();
         }
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
@@ -15,6 +19,12 @@ namespace CoffeeShop.GraphQL
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            app.UseRouting();
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapGraphQL();
+            });
         }
     }
 }
